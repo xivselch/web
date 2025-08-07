@@ -1,0 +1,23 @@
+---
+import Logo from "~/assets/logo.svg";
+---
+
+<header
+  class="sticky top-0 left-0 right-0 z-50 w-full py-3 px-4 border-b bg-[#fcfcfc] dark:bg-[#0c0c0c] transition-all duration-300 ease-in-out"
+>
+  <div
+    class="flex items-center w-full max-w-screen-xl px-0 md:px-8 justify-between space-x-4 mx-auto"
+  >
+    <div class="flex items-center space-x-2 rtl:space-x-reverse">
+      <a href="/" class="flex items-center space-x-2 rtl:space-x-reverse">
+        <Logo class="text-red-600 h-12 w-12" />
+        <span
+          class="hidden sm:block self-center text-2xl font-semibold whitespace-nowrap dark:text-white"
+        >
+          Emet-Selch<span class="text-red-600">.</span>
+        </span>
+      </a>
+    </div>
+    <div class="flex items-center gap-2"></div>
+  </div>
+</header>

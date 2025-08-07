@@ -1,0 +1,66 @@
+---
+import { getCollection, getEntry, render } from "astro:content";
+import "../../styles/global.css";
+import SiteLayout from "~/layouts/SiteLayout.astro";
+
+export const prerender = true;
+export async function getStaticPaths() {
+  const entries = await getCollection("legal");
+  return entries.map((entry) => ({
+    params: { slug: entry.id },
+    props: entry,
+  }));
+}
+
+const entry = (await getEntry("legal", Astro.params.slug))!;
+const { title, description, lastUpdated } = entry.data;
+const { Content, headings } = await render(entry);
+---
+
+<SiteLayout {title} {description}>
+  <div class="flex flex-col lg:flex-row gap-10 justify-center">
+    <aside class="sticky top-24 self-start hidden lg:block w-64 text-sm">
+      <nav class="border-l border-muted pl-6 mt-8">
+        <h2 class="text-muted-foreground font-semibold mb-4 text-sm">On this page</h2>
+        <ul class="space-y-2">
+          {
+            headings
+              .filter((h) => h.depth === 2 || h.depth === 3)
+              .map((h) => (
+                <li>
+                  <a
+                    href={`#${h.slug}`}
+                    class={`block transition-colors hover:text-primary ${
+                      h.depth === 2 ? "pl-0 font-medium" : "pl-4 text-muted-foreground"
+                    }`}
+                  >
+                    {h.text}
+                  </a>
+                </li>
+              ))
+          }
+        </ul>
+      </nav>
+    </aside>
+    <article class="prose dark:prose-invert flex-1 max-w-2xl">
+      <h1 class="font-bold tracking-tight mb-2">{title}</h1>
+      {
+        lastUpdated && (
+          <p class="text-sm text-muted-foreground">
+            Last updated:{" "}
+            <time datetime={lastUpdated.toISOString()}>
+              {lastUpdated.toLocaleDateString(undefined, {
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+              })}
+            </time>
+          </p>
+        )
+      }
+      <main class="[&>h2]:scroll-mt-32 [&>h3]:scroll-mt-32">
+        <Content />
+      </main>
+    </article>
+  </div>
+</SiteLayout>
