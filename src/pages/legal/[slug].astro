@@ -44,20 +44,18 @@ const { Content, headings } = await render(entry);
     </aside>
     <article class="prose dark:prose-invert flex-1 max-w-2xl">
       <h1 class="font-bold tracking-tight mb-2">{title}</h1>
-      {
-        lastUpdated && (
-          <p class="text-sm text-muted-foreground">
-            Last updated:{" "}
-            <time datetime={lastUpdated.toISOString()}>
-              {lastUpdated.toLocaleDateString(undefined, {
-                year: "numeric",
-                month: "long",
-                day: "numeric",
-              })}
-            </time>
-          </p>
-        )
-      }
+      <p class="text-sm text-muted-foreground">
+        Last updated:{" "}
+        <time datetime={lastUpdated.toISOString()}>
+          {
+            lastUpdated.toLocaleDateString(undefined, {
+              year: "numeric",
+              month: "long",
+              day: "numeric",
+            })
+          }
+        </time>
+      </p>
       <main class="[&>h2]:scroll-mt-32 [&>h3]:scroll-mt-32">
         <Content />
       </main>

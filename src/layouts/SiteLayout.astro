@@ -35,7 +35,7 @@ const { title, description } = Astro.props;
     <SEO
       {...defaults}
       title={typeof title === "undefined" ? defaults.name : `${title} | emet-selch.`}
-      description={defaults.description || description || ""}
+      description={description || defaults.description || ""}
     />
   </head>
   <body class="min-w-screen overflow-x-hidden">
