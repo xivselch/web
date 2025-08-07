@@ -4,7 +4,7 @@
   "version": "beta-0.0.1",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "astro build --remote",
     "preview": "astro preview",
     "astro": "astro"
   },
@@ -21,10 +21,12 @@
     "astro": "^5.12.8",
     "auth-astro": "^4.2.0",
     "nanostores": "^1.0.1",
-    "solid-devtools": "^0.34.3",
     "solid-icons": "^1.1.0",
     "solid-js": "^1.9.7",
     "tailwindcss": "^4.1.11",
     "tw-animate-css": "^1.3.6"
+  },
+  "devDependencies": {
+    "solid-devtools": "^0.34.3"
   }
 }
