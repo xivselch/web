@@ -1,0 +1,65 @@
+---
+import SiteLayout from "~/layouts/SiteLayout.astro";
+import LightMode from "~/assets/404-light.png";
+import DarkMode from "~/assets/404-dark.png";
+import { Button } from "~/components/ui/button";
+import { IoArrowBack } from "solid-icons/io";
+---
+
+<SiteLayout title="Page not found">
+  <div class="flex flex-col justify-center items-center h-screen px-4 py-12 -mt-24">
+    <div class="max-w-4xl w-full grid md:grid-cols-2 items-center gap-8 text-center md:text-left">
+      <div class="relative md:order-2 w-full max-w-sm mx-auto">
+        <svg
+          viewBox="0 0 100 100"
+          xmlns="http://www.w3.org/2000/svg"
+          class="absolute inset-0 w-full h-full z-0 scale-[1.4] opacity-40 dark:opacity-20"
+          aria-hidden="true"
+        >
+          <path
+            class="fill-zinc-200/25 dark:fill-zinc-900"
+            d="M30.1,-29.4C37.8,-22.5,41.8,-11.2,40.9,-0.9C40.1,9.5,34.3,19.1,26.7,27C19.1,35,9.5,41.4,-0.4,41.8C-10.4,42.2,-20.8,36.7,-29.1,28.7C-37.4,20.8,-43.7,10.4,-43.9,-0.2C-44.1,-10.8,-38.3,-21.7,-30,-28.6C-21.7,-35.5,-10.8,-38.4,0.2,-38.6C11.2,-38.8,22.5,-36.3,30.1,-29.4Z"
+            transform="translate(50 50)"></path>
+        </svg>
+        <img
+          src={LightMode.src}
+          alt="Emet-Selch pulling out a plug"
+          class="relative z-10 w-full select-none dark:hidden"
+          loading="lazy"
+          draggable="false"
+        />
+        <img
+          src={DarkMode.src}
+          alt="Emet-Selch pulling out a plug (dark)"
+          class="relative z-10 w-full select-none hidden dark:block"
+          loading="lazy"
+          draggable="false"
+        />
+      </div>
+      <div class="space-y-4 max-w-xl mx-auto">
+        <h1 class="text-3xl md:text-4xl font-extrabold text-[#5d1f3c] dark:text-[#e5d9d0]">
+          Oops. Something's missing.
+        </h1>
+        <p class="text-base md:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+          Emet-Selch may have pulled the wrong plug… or maybe you took a wrong turn in the Aetherial
+          Sea.
+        </p>
+        <ul class="text-sm text-gray-500 dark:text-gray-400 list-disc list-inside mt-2 space-y-1">
+          <li>The page may have been renamed or deleted.</li>
+          <li>Or perhaps it never existed at all — just a memory, like myself.</li>
+        </ul>
+        <div class="mt-5 flex gap-3 justify-center md:justify-start">
+          <Button
+            as="a"
+            href="/"
+            class="text-white bg-rose-600 hover:bg-rose-600 hover:opacity-80 transition duration-200"
+          >
+            <IoArrowBack />
+            Return to the Source
+          </Button>
+          <Button as="a" href="/support" variant="secondary">Need help?</Button>
+        </div>
+      </div>
+    </div>
+  </div>
+</SiteLayout>

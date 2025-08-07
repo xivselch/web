@@ -307,6 +307,13 @@
   resolved "https://registry.yarnpkg.com/@colors/colors/-/colors-1.6.0.tgz#ec6cd237440700bc23ca23087f513c75508958b0"
   integrity sha512-Ir+AOibqzrIsL6ajt3Rz3LskB7OiMVHqltZmspbW/TJuTVuyOMirVqAkjfY6JISiLHgyNqicAC8AyHHGzNd/dA==
 
+"@corvu/utils@~0.4.0", "@corvu/utils@~0.4.1":
+  version "0.4.2"
+  resolved "https://registry.yarnpkg.com/@corvu/utils/-/utils-0.4.2.tgz#ae867221297fd1e362efe41f081c42d7c746ff61"
+  integrity sha512-Ox2kYyxy7NoXdKWdHeDEjZxClwzO4SKM8plAaVwmAJPxHMqA0rLOoAsa+hBDwRLpctf+ZRnAd/ykguuJidnaTA==
+  dependencies:
+    "@floating-ui/dom" "^1.6.11"
+
 "@dabh/diagnostics@^2.0.2":
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/@dabh/diagnostics/-/diagnostics-2.0.3.tgz#7f7e97ee9a725dffc7808d93668cc984e1dc477a"
@@ -624,6 +631,26 @@
   resolved "https://registry.yarnpkg.com/@fastify/busboy/-/busboy-3.1.1.tgz#af3aea7f1e52ec916d8b5c9dcc0f09d4c060a3fc"
   integrity sha512-5DGmA8FTdB2XbDeEwc/5ZXBl6UbBAyBOOLlPuBnZ/N1SwdH9Ii+cOX3tBROlDgcTXxjOYnLMVoKk9+FXAw0CJw==
 
+"@floating-ui/core@^1.7.3":
+  version "1.7.3"
+  resolved "https://registry.yarnpkg.com/@floating-ui/core/-/core-1.7.3.tgz#462d722f001e23e46d86fd2bd0d21b7693ccb8b7"
+  integrity sha512-sGnvb5dmrJaKEZ+LDIpguvdX3bDlEllmv4/ClQ9awcmCZrlx5jQyyMWFM5kBI+EyNOCDDiKk8il0zeuX3Zlg/w==
+  dependencies:
+    "@floating-ui/utils" "^0.2.10"
+
+"@floating-ui/dom@^1.5.1", "@floating-ui/dom@^1.6.11":
+  version "1.7.3"
+  resolved "https://registry.yarnpkg.com/@floating-ui/dom/-/dom-1.7.3.tgz#6174ac3409e6a064bbdf1f4bb07188ee9461f8cf"
+  integrity sha512-uZA413QEpNuhtb3/iIKoYMSK07keHPYeXF02Zhd6e213j+d1NamLix/mCLxBUDW/Gx52sPH2m+chlUsyaBs/Ag==
+  dependencies:
+    "@floating-ui/core" "^1.7.3"
+    "@floating-ui/utils" "^0.2.10"
+
+"@floating-ui/utils@^0.2.10":
+  version "0.2.10"
+  resolved "https://registry.yarnpkg.com/@floating-ui/utils/-/utils-0.2.10.tgz#a2a1e3812d14525f725d011a73eceb41fef5bc1c"
+  integrity sha512-aGTxbpbg8/b5JfU1HXSrbH3wXZuLPJcNEcZQFMxLs3oSzgtVu6nFPkbbGGUvBcUjKV2YyB9Wxxabo+HEH9tcRQ==
+
 "@humanwhocodes/momoa@^2.0.2":
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/@humanwhocodes/momoa/-/momoa-2.0.4.tgz#8b9e7a629651d15009c3587d07a222deeb829385"
@@ -882,6 +909,20 @@
   resolved "https://registry.yarnpkg.com/@import-maps/resolve/-/resolve-2.0.0.tgz#d03d31dfee2994dc2bf8233a6e0862a137e8a575"
   integrity sha512-RwzRTpmrrS6Q1ZhQExwuxJGK1Wqhv4stt+OF2JzS+uawewpwNyU7EJL1WpBex7aDiiGLs4FsXGkfUBdYuX7xiQ==
 
+"@internationalized/date@^3.4.0":
+  version "3.8.2"
+  resolved "https://registry.yarnpkg.com/@internationalized/date/-/date-3.8.2.tgz#977620c1407cc6830fd44cb505679d23c599e119"
+  integrity sha512-/wENk7CbvLbkUvX1tu0mwq49CVkkWpkXubGel6birjRPyo6uQ4nQpnq5xZu823zRCwwn82zgHrvgF1vZyvmVgA==
+  dependencies:
+    "@swc/helpers" "^0.5.0"
+
+"@internationalized/number@^3.2.1":
+  version "3.6.4"
+  resolved "https://registry.yarnpkg.com/@internationalized/number/-/number-3.6.4.tgz#3ab593fec5e87654fdece0a3238cdc9d0eedff8a"
+  integrity sha512-P+/h+RDaiX8EGt3shB9AYM1+QgkvHmJ5rKi4/59k4sg9g58k9rqsRW0WxRO7jCoHyvVbFRRFKmVTdFYdehrxHg==
+  dependencies:
+    "@swc/helpers" "^0.5.0"
+
 "@isaacs/cliui@^8.0.2":
   version "8.0.2"
   resolved "https://registry.yarnpkg.com/@isaacs/cliui/-/cliui-8.0.2.tgz#b37667b7bc181c168782259bab42474fbf52b550"
@@ -927,10 +968,37 @@
     "@jridgewell/resolve-uri" "^3.1.0"
     "@jridgewell/sourcemap-codec" "^1.4.14"
 
+"@kobalte/core@^0.13.11":
+  version "0.13.11"
+  resolved "https://registry.yarnpkg.com/@kobalte/core/-/core-0.13.11.tgz#bb6bf7df5c72ee1d8af58ea562cdb033635895a0"
+  integrity sha512-hK7TYpdib/XDb/r/4XDBFaO9O+3ZHz4ZWryV4/3BfES+tSQVgg2IJupDnztKXB0BqbSRy/aWlHKw1SPtNPYCFQ==
+  dependencies:
+    "@floating-ui/dom" "^1.5.1"
+    "@internationalized/date" "^3.4.0"
+    "@internationalized/number" "^3.2.1"
+    "@kobalte/utils" "^0.9.1"
+    "@solid-primitives/props" "^3.1.8"
+    "@solid-primitives/resize-observer" "^2.0.26"
+    solid-presence "^0.1.8"
+    solid-prevent-scroll "^0.1.4"
+
 "@kobalte/tailwindcss@^0.9.0":
   version "0.9.0"
   resolved "https://registry.yarnpkg.com/@kobalte/tailwindcss/-/tailwindcss-0.9.0.tgz#b82e94838e9d752b537ebda79f6e7874a3e42324"
   integrity sha512-WbueJTVRiO4yrmfHIBwp07y3M5iibJ/gauEAQ7mOyg1tZulvpO7SM/UdgzX95a9a0KDt1mQFxwO7RmpOUXWOWA==
+
+"@kobalte/utils@^0.9.1":
+  version "0.9.1"
+  resolved "https://registry.yarnpkg.com/@kobalte/utils/-/utils-0.9.1.tgz#f648aaf2b794143ff23dda56dff05b42bdc20453"
+  integrity sha512-eeU60A3kprIiBDAfv9gUJX1tXGLuZiKMajUfSQURAF2pk4ZoMYiqIzmrMBvzcxP39xnYttgTyQEVLwiTZnrV4w==
+  dependencies:
+    "@solid-primitives/event-listener" "^2.2.14"
+    "@solid-primitives/keyed" "^1.2.0"
+    "@solid-primitives/map" "^0.4.7"
+    "@solid-primitives/media" "^2.2.4"
+    "@solid-primitives/props" "^3.1.8"
+    "@solid-primitives/refs" "^1.0.5"
+    "@solid-primitives/utils" "^6.2.1"
 
 "@libsql/client@^0.15.2":
   version "0.15.10"
@@ -1688,7 +1756,7 @@
     "@solid-primitives/static-store" "^0.1.2"
     "@solid-primitives/utils" "^6.3.2"
 
-"@solid-primitives/event-listener@^2.4.1", "@solid-primitives/event-listener@^2.4.3":
+"@solid-primitives/event-listener@^2.2.14", "@solid-primitives/event-listener@^2.4.1", "@solid-primitives/event-listener@^2.4.3":
   version "2.4.3"
   resolved "https://registry.yarnpkg.com/@solid-primitives/event-listener/-/event-listener-2.4.3.tgz#e09380222e38ed1b27f3d93bc72e85ba8507b3c0"
   integrity sha512-h4VqkYFv6Gf+L7SQj+Y6puigL/5DIi7x5q07VZET7AWcS+9/G3WfIE9WheniHWJs51OEkRB43w6lDys5YeFceg==
@@ -1704,7 +1772,19 @@
     "@solid-primitives/rootless" "^1.5.2"
     "@solid-primitives/utils" "^6.3.2"
 
-"@solid-primitives/media@^2.3.1":
+"@solid-primitives/keyed@^1.2.0":
+  version "1.5.2"
+  resolved "https://registry.yarnpkg.com/@solid-primitives/keyed/-/keyed-1.5.2.tgz#0b2caa83bb293374b513f33fd4ba09dc3b5f4630"
+  integrity sha512-BgoEdqPw48URnI+L5sZIHdF4ua4Las1eWEBBPaoSFs42kkhnHue+rwCBPL2Z9ebOyQ75sUhUfOETdJfmv0D6Kg==
+
+"@solid-primitives/map@^0.4.7":
+  version "0.4.13"
+  resolved "https://registry.yarnpkg.com/@solid-primitives/map/-/map-0.4.13.tgz#f0096c53ad3405fde444a738f4b1adb0f402ea16"
+  integrity sha512-B1zyFbsiTQvqPr+cuPCXO72sRuczG9Swncqk5P74NCGw1VE8qa/Ry9GlfI1e/VdeQYHjan+XkbE3rO2GW/qKew==
+  dependencies:
+    "@solid-primitives/trigger" "^1.1.0"
+
+"@solid-primitives/media@^2.2.4", "@solid-primitives/media@^2.3.1":
   version "2.3.3"
   resolved "https://registry.yarnpkg.com/@solid-primitives/media/-/media-2.3.3.tgz#74d669b6814c30a8308a468cfd7412133ea7d16e"
   integrity sha512-hQ4hLOGvfbugQi5Eu1BFWAIJGIAzztq9x0h02xgBGl2l0Jaa3h7tg6bz5tV1NSuNYVGio4rPoa7zVQQLkkx9dA==
@@ -1714,14 +1794,21 @@
     "@solid-primitives/static-store" "^0.1.2"
     "@solid-primitives/utils" "^6.3.2"
 
-"@solid-primitives/refs@^1.1.1":
+"@solid-primitives/props@^3.1.8":
+  version "3.2.2"
+  resolved "https://registry.yarnpkg.com/@solid-primitives/props/-/props-3.2.2.tgz#ee6474cb6e8a94b551b181e9716065f613552dc5"
+  integrity sha512-lZOTwFJajBrshSyg14nBMEP0h8MXzPowGO0s3OeiR3z6nXHTfj0FhzDtJMv+VYoRJKQHG2QRnJTgCzK6erARAw==
+  dependencies:
+    "@solid-primitives/utils" "^6.3.2"
+
+"@solid-primitives/refs@^1.0.5", "@solid-primitives/refs@^1.1.1":
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/@solid-primitives/refs/-/refs-1.1.2.tgz#1a37a825754bc8fe7f8845fc0c7664683646288e"
   integrity sha512-K7tf2thy7L+YJjdqXspXOg5xvNEOH8tgEWsp0+1mQk3obHBRD6hEjYZk7p7FlJphSZImS35je3UfmWuD7MhDfg==
   dependencies:
     "@solid-primitives/utils" "^6.3.2"
 
-"@solid-primitives/resize-observer@^2.1.3":
+"@solid-primitives/resize-observer@^2.0.26", "@solid-primitives/resize-observer@^2.1.3":
   version "2.1.3"
   resolved "https://registry.yarnpkg.com/@solid-primitives/resize-observer/-/resize-observer-2.1.3.tgz#459db96f9c4a3d98a194d940c6e69f3ad4b2dad8"
   integrity sha512-zBLje5E06TgOg93S7rGPldmhDnouNGhvfZVKOp+oG2XU8snA+GoCSSCz1M+jpNAg5Ek2EakU5UVQqL152WmdXQ==
@@ -1758,12 +1845,19 @@
     "@solid-primitives/rootless" "^1.5.2"
     "@solid-primitives/utils" "^6.3.2"
 
-"@solid-primitives/utils@^6.3.1", "@solid-primitives/utils@^6.3.2":
+"@solid-primitives/trigger@^1.1.0":
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/@solid-primitives/trigger/-/trigger-1.2.2.tgz#30e988ed3d7c125d64d951f87db6cbbea886397d"
+  integrity sha512-IWoptVc0SWYgmpBPpCMehS5b07+tpFcvw15tOQ3QbXedSYn6KP8zCjPkHNzMxcOvOicTneleeZDP7lqmz+PQ6g==
+  dependencies:
+    "@solid-primitives/utils" "^6.3.2"
+
+"@solid-primitives/utils@^6.2.1", "@solid-primitives/utils@^6.3.1", "@solid-primitives/utils@^6.3.2":
   version "6.3.2"
   resolved "https://registry.yarnpkg.com/@solid-primitives/utils/-/utils-6.3.2.tgz#13d6126fc5a498965d7c45dd41c052e42dcfd7e1"
   integrity sha512-hZ/M/qr25QOCcwDPOHtGjxTD8w2mNyVAYvcfgwzBHq2RwNqHNdDNsMZYap20+ruRwW4A3Cdkczyoz0TSxLCAPQ==
 
-"@swc/helpers@^0.5.12":
+"@swc/helpers@^0.5.0", "@swc/helpers@^0.5.12":
   version "0.5.17"
   resolved "https://registry.yarnpkg.com/@swc/helpers/-/helpers-0.5.17.tgz#5a7be95ac0f0bf186e7e6e890e7a6f6cda6ce971"
   integrity sha512-5IKx/Y13RsYd+sauPb2x+U/xZikHjolzfuDgTAl/Tdf3Q8rslRvC19NKDLgAJQ6wsqADk10ntlv08nPFw/gO/A==
@@ -2657,6 +2751,13 @@ citty@^0.1.5, citty@^0.1.6:
   integrity sha512-tskPPKEs8D2KPafUypv2gxwJP8h/OaJmC82QQGGDQcHvXX43xF2VDACcJVmZ0EuSxkpO9Kc4MlrA3q0+FG58AQ==
   dependencies:
     consola "^3.2.3"
+
+class-variance-authority@^0.7.1:
+  version "0.7.1"
+  resolved "https://registry.yarnpkg.com/class-variance-authority/-/class-variance-authority-0.7.1.tgz#4008a798a0e4553a781a57ac5177c9fb5d043787"
+  integrity sha512-Ka+9Trutv7G8M6WT6SeiRWz792K5qEqIGEGzXKhAE6xOWAY6pPH8U+9IY3oCMv6kqTmLsv7Xh/2w2RigkePMsg==
+  dependencies:
+    clsx "^2.1.1"
 
 cli-boxes@^3.0.0:
   version "3.0.0"
@@ -6059,6 +6160,20 @@ solid-js@^1.9.7:
     seroval "~1.3.0"
     seroval-plugins "~1.3.0"
 
+solid-presence@^0.1.8:
+  version "0.1.8"
+  resolved "https://registry.yarnpkg.com/solid-presence/-/solid-presence-0.1.8.tgz#c8713c7d52122b128d22fc1c0afdb08b0fb93d07"
+  integrity sha512-pWGtXUFWYYUZNbg5YpG5vkQJyOtzn2KXhxYaMx/4I+lylTLYkITOLevaCwMRN+liCVk0pqB6EayLWojNqBFECA==
+  dependencies:
+    "@corvu/utils" "~0.4.0"
+
+solid-prevent-scroll@^0.1.4:
+  version "0.1.10"
+  resolved "https://registry.yarnpkg.com/solid-prevent-scroll/-/solid-prevent-scroll-0.1.10.tgz#709580dd858cd51ef3b9c2ec4389a56684d6eac3"
+  integrity sha512-KplGPX2GHiWJLZ6AXYRql4M127PdYzfwvLJJXMkO+CMb8Np4VxqDAg5S8jLdwlEuBis/ia9DKw2M8dFx5u8Mhw==
+  dependencies:
+    "@corvu/utils" "~0.4.1"
+
 solid-refresh@^0.6.3:
   version "0.6.3"
   resolved "https://registry.yarnpkg.com/solid-refresh/-/solid-refresh-0.6.3.tgz#d23ef80f04e177619c9234a809c573cb16360627"
@@ -6250,6 +6365,11 @@ system-architecture@^0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/system-architecture/-/system-architecture-0.1.0.tgz#71012b3ac141427d97c67c56bc7921af6bff122d"
   integrity sha512-ulAk51I9UVUyJgxlv9M6lFot2WP3e7t8Kz9+IS6D4rVba1tR9kON+Ey69f+1R4Q8cd45Lod6a4IcJIxnzGc/zA==
+
+tailwind-merge@^3.3.1:
+  version "3.3.1"
+  resolved "https://registry.yarnpkg.com/tailwind-merge/-/tailwind-merge-3.3.1.tgz#a7e7db7c714f6020319e626ecfb7e7dac8393a4b"
+  integrity sha512-gBXpgUm/3rp1lMZZrM/w7D8GKqshif0zAymAhbCyIt8KMe+0v9DQ7cdYLR4FHH/cKpdTXb+A/tKKU3eolfsI+g==
 
 tailwindcss@4.1.11, tailwindcss@^4.1.11:
   version "4.1.11"
