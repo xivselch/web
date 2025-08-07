@@ -1,6 +1,10 @@
 // @ts-check
 import { defineConfig } from "astro/config";
 import path from "path";
+import { fileURLToPath } from "url";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 import solid from "@astrojs/solid-js";
 import tailwind from "@tailwindcss/vite";
