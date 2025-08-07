@@ -1,5 +1,6 @@
 // @ts-check
 import { defineConfig } from "astro/config";
+import path from "path";
 
 import solid from "@astrojs/solid-js";
 import tailwind from "@tailwindcss/vite";
@@ -17,5 +18,12 @@ export default defineConfig({
     "/support": "/chat",
   },
   site: "https://emetselch.xyz",
-  vite: { plugins: [tailwind()] },
+  vite: {
+    plugins: [tailwind()],
+    resolve: {
+      alias: {
+        "~": path.resolve(__dirname, "src"),
+      },
+    },
+  },
 });
