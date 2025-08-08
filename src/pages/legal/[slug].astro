@@ -1,7 +1,6 @@
 ---
-import { getCollection, getEntry, render } from "astro:content";
-import "../../styles/global.css";
 import SiteLayout from "~/layouts/SiteLayout.astro";
+import { getCollection, getEntry, render } from "astro:content";
 
 export const prerender = true;
 export async function getStaticPaths() {
