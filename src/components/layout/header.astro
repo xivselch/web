@@ -1,6 +1,37 @@
 ---
 import Logo from "~/assets/Logo.svg";
+import { MegaMenu } from "~/components/layout/navigation";
+
+const menuItems = [
+  {
+    label: "Companion",
+    children: [
+      {
+        label: "Deliveries",
+        href: "/companion/deliveries",
+        description: "Track your active and past deliveries",
+      },
+      {
+        label: "Roulette",
+        href: "/companion/roulette",
+        description: "View daily roulettes and bonuses",
+      },
+      {
+        label: "Tribal Quests",
+        href: "/companion/tribal-quests",
+        description: "Manage your beast tribe reputation quests",
+      },
+    ],
+  },
+];
 ---
+
+<div class="bg-yellow-400 text-yellow-900 text-center py-2 font-semibold text-sm select-none">
+  🚧 This site is still under development, some features may be broken. If you encounter any issues
+  please visit{" "}
+  <a href="/chat" class="underline hover:text-yellow-700"> our Discord server </a>
+  .
+</div>
 
 <header
   class="sticky top-0 left-0 right-0 z-50 w-full py-3 px-4 border-b bg-[#fcfcfc] dark:bg-[#0c0c0c] transition-all duration-300 ease-in-out"
@@ -17,7 +48,13 @@ import Logo from "~/assets/Logo.svg";
           Emet-Selch<span class="text-red-600">.</span>
         </span>
       </a>
+      <div class="flex items-center gap-2 ml-6">
+        <MegaMenu items={menuItems} client:visible />
+      </div>
     </div>
-    <div class="flex items-center gap-2"></div>
+
+    <div class="flex items-center gap-2">
+      {/* user menu code here */}
+    </div>
   </div>
 </header>

@@ -10,4 +10,12 @@ const legal = defineCollection({
   }),
 });
 
-export const collections = { legal };
+const trackers = defineCollection({
+  type: "content",
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+  }),
+});
+
+export const collections = { legal, trackers };

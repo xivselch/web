@@ -1,0 +1,35 @@
+---
+title: Custom Deliveries
+description: Weekly crafting and gathering tasks for NPCs to earn scrips and gil.
+---
+
+import { Callout, CalloutContent, CalloutTitle } from "~/components/ui/callout";
+import Table from "~/components/apps/trackers/deliveries";
+
+Custom Deliveries are weekly turn-in tasks where players craft or gather requested items for specific NPC clients, helping them with personal goals or ambitions while earning rewards. These deliveries are tailored to Disciples of the Hand and Land.
+
+You can complete up to **12 deliveries per week**, with a maximum of 6 per client.  
+As client satisfaction increases, you unlock more story content and improved rewards.
+
+<div class="flex flex-col space-y-4">
+    <Callout>
+    <CalloutTitle>Did you know?</CalloutTitle>
+    <CalloutContent>
+        Once a client's satisfaction is maxed out, their deliveries still reward scrips and gil, making
+        them great for consistent weekly gains. Prioritize those who align with your current crafting or
+        gathering goals.
+    </CalloutContent>
+    </Callout>
+
+    <Callout variant="error">
+    <CalloutTitle>Caution!</CalloutTitle>
+    <CalloutContent>
+        Custom Deliveries require the use of **crafted or gathered items** based on each client's
+        requests and satisfaction tier. Higher satisfaction levels may demand collectables with specific
+        quality thresholds.
+    </CalloutContent>
+    </Callout>
+
+</div>
+
+<Table client:only />

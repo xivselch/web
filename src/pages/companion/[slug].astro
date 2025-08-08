@@ -1,0 +1,28 @@
+---
+import SiteLayout from "~/layouts/SiteLayout.astro";
+import { getCollection, getEntry, render } from "astro:content";
+
+export const prerender = true;
+export async function getStaticPaths() {
+  const entries = await getCollection("trackers");
+  return entries.map((entry) => ({
+    params: { slug: entry.slug },
+    props: entry,
+  }));
+}
+
+const entry = (await getEntry("trackers", Astro.params.slug))!;
+const { title, description } = entry.data;
+const { Content } = await render(entry);
+---
+
+<SiteLayout {title} {description}>
+  <div class="flex flex-col lg:flex-row gap-10 justify-center">
+    <article class="prose dark:prose-invert flex-1 max-w-3xl w-full">
+      <h1 class="font-bold tracking-tight mb-2">{title}</h1>
+      <main class="[&>h2]:scroll-mt-32 [&>h3]:scroll-mt-32">
+        <Content />
+      </main>
+    </article>
+  </div>
+</SiteLayout>

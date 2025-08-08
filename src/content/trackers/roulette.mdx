@@ -1,0 +1,30 @@
+---
+title: Duty Roulette
+description: Daily randomized dungeon roulettes for gil, XP, and tomestones.
+---
+
+import { Callout, CalloutContent, CalloutTitle } from "~/components/ui/callout";
+import Table from "~/components/apps/trackers/roulette";
+
+Duty Roulettes are randomized daily dungeon activities that match you into eligible duties based on your selected role. They offer bonus rewards for first-time completions each day, including gil, experience, and tomestones.
+
+You can complete each roulette category once per day for its bonus. Popular categories include **Leveling**, **Expert**, **Alliance Raids**, and **Mentor**. Some roulettes have specific unlock requirements or role restrictions.
+
+<div class="flex flex-col space-y-4">
+    <Callout>
+    <CalloutTitle>Did you know?</CalloutTitle>
+    <CalloutContent>
+        Queueing as a tank or healer often results in much faster duty finder times &mdash; plus you'll get **Adventurer in Need** bonuses if your role is in demand.
+    </CalloutContent>
+    </Callout>
+
+    <Callout variant="warning">
+    <CalloutTitle>Important!</CalloutTitle>
+    <CalloutContent>
+        Most roulettes require **minimum item level** and completion of specific main scenario or side content. Make sure to unlock them via the Duty Finder and related questlines.
+    </CalloutContent>
+    </Callout>
+
+</div>
+
+<Table client:only />

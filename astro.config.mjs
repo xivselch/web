@@ -11,10 +11,11 @@ import tailwind from "@tailwindcss/vite";
 import netlify from "@astrojs/netlify";
 import auth from "auth-astro";
 import db from "@astrojs/db";
+import mdx from "@astrojs/mdx";
 
 export default defineConfig({
   adapter: netlify(),
-  integrations: [solid({ devtools: true }), auth(), db()],
+  integrations: [solid({ devtools: true }), auth(), db(), mdx()],
   output: "server",
   redirects: {
     "/chat": "https://discord.gg/x9Y7FbMrRZ",
