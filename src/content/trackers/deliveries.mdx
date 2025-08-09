@@ -5,6 +5,7 @@ description: Weekly crafting and gathering tasks for NPCs to earn scrips and gil
 
 import { Callout, CalloutContent, CalloutTitle } from "~/components/ui/callout";
 import Table from "~/components/apps/trackers/deliveries";
+import Spinner from "~/components/layout/spinner";
 
 Custom Deliveries are weekly turn-in tasks where players craft or gather requested items for specific NPC clients, helping them with personal goals or ambitions while earning rewards. These deliveries are tailored to Disciples of the Hand and Land.
 
@@ -32,4 +33,8 @@ As client satisfaction increases, you unlock more story content and improved rew
 
 </div>
 
-<Table client:only />
+<Table client:only="solid-js">
+  <div slot="fallback" class="flex items-center justify-center h-96 w-full">
+    <Spinner />
+  </div>
+</Table>

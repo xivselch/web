@@ -1,4 +1,11 @@
-import { createMemo, createResource, createSignal, type Accessor, type Setter } from "solid-js";
+import {
+  createMemo,
+  createResource,
+  createSignal,
+  type JSX,
+  type Accessor,
+  type Setter,
+} from "solid-js";
 import type { ColumnDef } from "@tanstack/solid-table";
 import { DataTable } from "./table";
 import { Badge } from "~/components/ui/badge";
@@ -192,7 +199,7 @@ const columns: ColumnDef<Society>[] = [
   },
 ];
 
-export default function Table() {
+export default function Table(props: { children: JSX.Element }) {
   const [data] = createResource(async () => {
     const res = await fetch("/api/game/societies");
     if (!res.ok) return;
@@ -236,40 +243,43 @@ export default function Table() {
   });
 
   return (
-    <DataTable
-      columns={columns}
-      data={data() ?? []}
-      filterBy="name"
-      resetFn={(data) => {
-        data.forEach((row) => {
-          row.state.setRankIndex(0);
-          row.state.setReputation(0);
-        });
-        localStorage.removeItem("societyProgress");
-      }}
-      saveFn={(data) => {
-        localStorage.setItem(
-          "societyProgress",
-          JSON.stringify(
-            data.map((row) => ({
-              name: row.name,
-              rankIndex: row.state.rankIndex(),
-              reputation: row.state.reputation(),
-            }))
-          )
-        );
-      }}
-      totalCompletedFn={(data) => {
-        if (!data.length) return 0;
+    <>
+      {props.children}
+      <DataTable
+        columns={columns}
+        data={data() ?? []}
+        filterBy="name"
+        resetFn={(data) => {
+          data.forEach((row) => {
+            row.state.setRankIndex(0);
+            row.state.setReputation(0);
+          });
+          localStorage.removeItem("societyProgress");
+        }}
+        saveFn={(data) => {
+          localStorage.setItem(
+            "societyProgress",
+            JSON.stringify(
+              data.map((row) => ({
+                name: row.name,
+                rankIndex: row.state.rankIndex(),
+                reputation: row.state.reputation(),
+              }))
+            )
+          );
+        }}
+        totalCompletedFn={(data) => {
+          if (!data.length) return 0;
 
-        let completedRows = 0;
-        data.forEach((row) => {
-          const isLastRank = row.state.rankIndex() === row.ranks.length - 1;
-          if (isLastRank) completedRows++;
-        });
+          let completedRows = 0;
+          data.forEach((row) => {
+            const isLastRank = row.state.rankIndex() === row.ranks.length - 1;
+            if (isLastRank) completedRows++;
+          });
 
-        return completedRows;
-      }}
-    />
+          return completedRows;
+        }}
+      />
+    </>
   );
 }

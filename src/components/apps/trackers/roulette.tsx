@@ -1,4 +1,4 @@
-import { createResource } from "solid-js";
+import { createResource, type JSX } from "solid-js";
 import type { ColumnDef } from "@tanstack/solid-table";
 import { DataTable } from "./table";
 import { Button } from "~/components/ui/button";
@@ -166,12 +166,17 @@ const columns: ColumnDef<Duty>[] = [
   },
 ];
 
-export default function Table() {
+export default function Table(props: { children: JSX.Element }) {
   const [data] = createResource(async () => {
     const res = await fetch("/api/game/roulette");
     if (!res.ok) return;
     return res.json();
   });
 
-  return <DataTable tally columns={columns} data={data() ?? []} />;
+  return (
+    <>
+      {props.children}
+      <DataTable tally columns={columns} data={data() ?? []} />
+    </>
+  );
 }
