@@ -1,8 +1,7 @@
 import { defineCollection, z } from "astro:content";
-import { glob } from "astro/loaders";
 
 const legal = defineCollection({
-  loader: glob({ pattern: "**/[^_]*.{md,mdx}", base: "./src/content/legal" }),
+  type: "content",
   schema: z.object({
     title: z.string(),
     description: z.string(),
@@ -10,7 +9,7 @@ const legal = defineCollection({
   }),
 });
 
-const trackers = defineCollection({
+const tools = defineCollection({
   type: "content",
   schema: z.object({
     title: z.string(),
@@ -18,4 +17,4 @@ const trackers = defineCollection({
   }),
 });
 
-export const collections = { legal, trackers };
+export const collections = { legal, tools };

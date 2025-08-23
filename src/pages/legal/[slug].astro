@@ -6,7 +6,7 @@ export const prerender = true;
 export async function getStaticPaths() {
   const entries = await getCollection("legal");
   return entries.map((entry) => ({
-    params: { slug: entry.id },
+    params: { slug: entry.slug },
     props: entry,
   }));
 }
@@ -18,6 +18,24 @@ const { Content, headings } = await render(entry);
 
 <SiteLayout {title} {description}>
   <div class="flex flex-col lg:flex-row gap-10 justify-center">
+    <article class="prose dark:prose-invert flex-1 max-w-2xl">
+      <h1 class="font-bold tracking-tight mb-2">{title}</h1>
+      <p class="text-sm text-muted-foreground">
+        Last updated:{" "}
+        <time datetime={lastUpdated.toISOString()}>
+          {
+            lastUpdated.toLocaleDateString(undefined, {
+              year: "numeric",
+              month: "long",
+              day: "numeric",
+            })
+          }
+        </time>
+      </p>
+      <main class="[&>h2]:scroll-mt-32 [&>h3]:scroll-mt-32">
+        <Content />
+      </main>
+    </article>
     <aside class="sticky top-24 self-start hidden lg:block w-64 text-sm">
       <nav class="border-l border-muted pl-6 mt-8">
         <h2 class="text-muted-foreground font-semibold mb-4 text-sm">On this page</h2>
@@ -41,23 +59,5 @@ const { Content, headings } = await render(entry);
         </ul>
       </nav>
     </aside>
-    <article class="prose dark:prose-invert flex-1 max-w-2xl">
-      <h1 class="font-bold tracking-tight mb-2">{title}</h1>
-      <p class="text-sm text-muted-foreground">
-        Last updated:{" "}
-        <time datetime={lastUpdated.toISOString()}>
-          {
-            lastUpdated.toLocaleDateString(undefined, {
-              year: "numeric",
-              month: "long",
-              day: "numeric",
-            })
-          }
-        </time>
-      </p>
-      <main class="[&>h2]:scroll-mt-32 [&>h3]:scroll-mt-32">
-        <Content />
-      </main>
-    </article>
   </div>
 </SiteLayout>

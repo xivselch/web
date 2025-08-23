@@ -4,14 +4,14 @@ import { getCollection, getEntry, render } from "astro:content";
 
 export const prerender = true;
 export async function getStaticPaths() {
-  const entries = await getCollection("trackers");
+  const entries = await getCollection("tools");
   return entries.map((entry) => ({
     params: { slug: entry.slug },
     props: entry,
   }));
 }
 
-const entry = (await getEntry("trackers", Astro.params.slug))!;
+const entry = (await getEntry("tools", Astro.params.slug))!;
 const { title, description } = entry.data;
 const { Content } = await render(entry);
 ---
