@@ -25,7 +25,7 @@ const Characters = defineTable({
 const Users = defineTable({
   columns: {
     id: column.text({ primaryKey: true }),
-    characters: column.json({ default: [] }), // { id: string; main: boolean; verified: boolean; }[]
+    linked: column.json({ default: [] }),
     api_token: column.text({ optional: true }),
     created_at: column.date({ default: NOW }),
     updated_at: column.date({ default: NOW }),

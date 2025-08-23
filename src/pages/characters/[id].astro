@@ -1,0 +1,13 @@
+---
+import Layout from "~/layouts/SiteLayout.astro";
+import ProfilePanel from "~/components/apps/profile";
+
+const res = await fetch(`${Astro.url.origin}/api/characters/${Astro.params.id}`);
+if (!res.ok) return new Response(res.statusText, { status: res.status });
+
+const data = await res.json();
+---
+
+<Layout title={`${data.name} (${data.world_name})`}>
+  <ProfilePanel {data} client:load />
+</Layout>

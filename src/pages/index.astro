@@ -1,0 +1,51 @@
+---
+import SiteLayout from "~/layouts/SiteLayout.astro";
+import LightMode from "~/assets/404-light.png";
+import DarkMode from "~/assets/404-dark.png";
+import { Button } from "~/components/ui/button";
+import { FiArrowUpRight } from "solid-icons/fi";
+---
+
+<SiteLayout>
+  <section
+    class="w-full max-w-4xl px-4 md:px-6 mx-auto min-h-[calc(100vh-12rem)] flex items-center"
+  >
+    <div class="grid md:grid-cols-2 items-center gap-8 text-center md:text-left w-full">
+      <div class="relative md:order-2 w-full max-w-sm mx-auto h-72">
+        <svg
+          viewBox="0 0 100 100"
+          xmlns="http://www.w3.org/2000/svg"
+          class="absolute inset-0 w-full h-full z-0 scale-[1.2] md:scale-[1.4] opacity-40 dark:opacity-20"
+          aria-hidden="true"
+        >
+          <path
+            class="fill-zinc-200/30 dark:fill-zinc-900"
+            d="M30.1,-29.4C37.8,-22.5,41.8,-11.2,40.9,-0.9C40.1,9.5,34.3,19.1,26.7,27C19.1,35,9.5,41.4,-0.4,41.8C-10.4,42.2,-20.8,36.7,-29.1,28.7C-37.4,20.8,-43.7,10.4,-43.9,-0.2C-44.1,-10.8,-38.3,-21.7,-30,-28.6C-21.7,-35.5,-10.8,-38.4,0.2,-38.6C11.2,-38.8,22.5,-36.3,30.1,-29.4Z"
+            transform="translate(50 50)"></path>
+        </svg>
+      </div>
+      <div class="space-y-6 p-4 max-w-xl mx-auto">
+        <div
+          class="md:flex items-baseline space-x-2 text-4xl md:text-5xl font-extrabold tracking-tight flex-wrap"
+        >
+          <h1 class="whitespace-nowrap dark:text-white">
+            Emet-Selch<span class="text-red-600">.</span>
+          </h1>
+          <h2 class="hidden lg:block text-xl text-muted-foreground font-normal">
+            For the Unsundered.
+          </h2>
+        </div>
+        <p class="text-base md:text-lg opacity-80 max-w-full">
+          A companion built to be fast, intuitive, and immersive — helping you explore the shards
+          and stars with ease.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-2">
+          <Button as="a" href="/characters" size={"lg"} class="flex items-center gap-2 group">
+            Explore characters
+            <FiArrowUpRight class="transition-transform group-hover:translate-x-1" />
+          </Button>
+        </div>
+      </div>
+    </div>
+  </section>
+</SiteLayout>

@@ -13,7 +13,7 @@ import { IoArrowBack } from "solid-icons/io";
         <svg
           viewBox="0 0 100 100"
           xmlns="http://www.w3.org/2000/svg"
-          class="absolute inset-0 w-full h-full z-0 scale-[1.4] opacity-40 dark:opacity-20"
+          class="absolute inset-0 w-full h-full z-0 scale-[1.2] md:scale-[1.4] opacity-40 dark:opacity-20"
           aria-hidden="true"
         >
           <path
@@ -24,21 +24,21 @@ import { IoArrowBack } from "solid-icons/io";
         <img
           src={LightMode.src}
           alt="Emet-Selch pulling out a plug"
-          class="relative z-10 w-full select-none dark:hidden"
+          class="relative z-10 w-fit select-none dark:hidden"
           loading="lazy"
           draggable="false"
         />
         <img
           src={DarkMode.src}
           alt="Emet-Selch pulling out a plug (dark)"
-          class="relative z-10 w-full select-none hidden dark:block"
+          class="relative z-10 w-fit select-none hidden dark:block"
           loading="lazy"
           draggable="false"
         />
       </div>
       <div class="space-y-4 max-w-xl mx-auto">
-        <h1 class="text-3xl md:text-4xl font-extrabold text-[#5d1f3c] dark:text-[#e5d9d0]">
-          Oops. Something's missing.
+        <h1 class="text-3xl md:text-4xl font-extrabold">
+          Oops. Something's missing<span class="text-red-600">.</span>
         </h1>
         <p class="text-base md:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
           Emet-Selch may have pulled the wrong plug… or maybe you took a wrong turn in the Aetherial
@@ -49,12 +49,8 @@ import { IoArrowBack } from "solid-icons/io";
           <li>Or perhaps it never existed at all — just a memory, like myself.</li>
         </ul>
         <div class="mt-5 flex gap-3 justify-center md:justify-start">
-          <Button
-            as="a"
-            href="/"
-            class="text-white bg-rose-600 hover:bg-rose-600 hover:opacity-80 transition duration-200"
-          >
-            <IoArrowBack />
+          <Button as="a" href="/" class="group">
+            <IoArrowBack class="transition-transform group-hover:-translate-x-1" />
             Return to the Source
           </Button>
           <Button as="a" href="/support" variant="secondary">Need help?</Button>

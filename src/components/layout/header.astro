@@ -1,29 +1,8 @@
 ---
 import Logo from "~/assets/Logo.svg";
-import { MegaMenu } from "~/components/layout/navigation";
-
-const menuItems = [
-  {
-    label: "Companion",
-    children: [
-      {
-        label: "Deliveries",
-        href: "/companion/deliveries",
-        description: "Track your active and past deliveries",
-      },
-      {
-        label: "Roulette",
-        href: "/companion/roulette",
-        description: "View daily roulettes and bonuses",
-      },
-      {
-        label: "Society Quests",
-        href: "/companion/societies",
-        description: "Manage your society reputation quests",
-      },
-    ],
-  },
-];
+import { MegaMenu, MobileMenu } from "~/components/layout/navigation";
+import UserMenu from "../apps/user";
+import ThemeToggle from "./theme";
 ---
 
 <div class="bg-yellow-400 text-yellow-900 text-center py-2 font-semibold text-sm select-none">
@@ -40,21 +19,22 @@ const menuItems = [
     class="flex items-center w-full max-w-screen-xl px-0 md:px-8 justify-between space-x-4 mx-auto"
   >
     <div class="flex items-center space-x-2 rtl:space-x-reverse">
+      <div class="flex md:hidden"><MobileMenu client:visible /></div>
       <a href="/" class="flex items-center space-x-2 rtl:space-x-reverse">
-        <Logo class="text-red-600 h-12 w-12" />
+        <Logo class="h-12 w-12" />
         <span
           class="hidden sm:block self-center text-2xl font-semibold whitespace-nowrap dark:text-white"
         >
           Emet-Selch<span class="text-red-600">.</span>
         </span>
       </a>
-      <div class="flex items-center gap-2 ml-6">
-        <MegaMenu items={menuItems} client:visible />
-      </div>
     </div>
-
-    <div class="flex items-center gap-2">
-      {/* user menu code here */}
+    <div class="flex items-center gap-2 md:w-full md:justify-between">
+      <div class="hidden md:flex"><MegaMenu client:visible /></div>
+      <div class="flex items-center gap-1">
+        <UserMenu client:only />
+        <ThemeToggle client:only />
+      </div>
     </div>
   </div>
 </header>
